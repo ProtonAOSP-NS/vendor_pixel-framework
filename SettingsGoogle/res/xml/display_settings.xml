@@ -87,7 +87,15 @@
             android:title="@string/color_mode_title"
             settings:controller="com.android.settings.display.ColorModePreferenceController"
             settings:keywords="@string/keywords_color_mode" />
+    </PreferenceCategory>
 
+    <!-- Statusbar Settings -->
+    <PreferenceCategory  
+        android:title="@string/status_bar_title">
+        <Preference
+            android:key="statusbar_settings"
+            android:title="@string/status_bar_title"
+            android:fragment="com.android.settings.custom.statusbar.StatusBarSettings" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -151,6 +159,12 @@
             android:key="tap_to_wake"
             android:summary="@string/tap_to_wake_summary"
             android:title="@string/tap_to_wake" />
+
+        <com.android.settings.custom.preference.GlobalSettingSwitchPreference
+            android:key="wake_when_plugged_or_unplugged"
+            android:title="@string/wake_when_plugged_or_unplugged_title"
+            android:summary="@string/wake_when_plugged_or_unplugged_summary"
+            android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
 
         <ListPreference
             android:key="theme"
